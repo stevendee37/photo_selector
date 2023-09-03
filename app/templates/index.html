@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="width:100%;">
+        <div class="row" style="background-color: #52ab98; padding-top: 150px; padding-bottom: 150px">
+            <div class="col-xs-4 col-xs-offset-2" style="color:white;">
+                <h1 style="font-size:150px">
+                    {{ info.website_name }}
+                </h1>
+                <p class="lead" style="font-size:45px">Image Filtering Enhanced by Machine Learning</p>
+                <a class="btn btn-lg btn-primary" href="/submit" role="button" style="background-color: #52ab98; 
+                border-color:white;color:white">Try it Now &raquo;</a>
+            </div> 
+        </div>
+        <div class="row" style="background-color: white; padding-top:100px;color:black;">
+            <div class="col-xs-3 col-xs-offset-2" style="min-height:150px">
+                <h1 style="font-size: 50px;padding-top: 100px;padding-bottom:10px">Upgrade Your Workflow</h1>
+                <p class="lead" style="font-size:30px">Use {{ info.website_name }} to immediately sort through and remove blurry photos,
+                allowing you to go straight from your photography session to the editing room.</p>
+            </div>
+            <div class="col-xs-3 col-xs-offset-1" style="padding-left:90px">
+                <img src="static/nonuser/13038.jpg" style="width:800px">
+            </div>
+        </div>
+        <div class="row" style="background-color: white;padding-bottom:100px;color:black;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="static/nonuser/1234.png" style="width:850px; padding-left:200px">
+            </div>
+            <div class="col-xs-3 col-xs-offset-3" style="min-height:150px;padding-top:50px">
+                <h1 style="font-size: 50px;padding-top: 100px;padding-bottom:10px">Your New Assistant</h1>
+                <p class="lead" style="font-size:30px">{{ info.website_name }} uses artificial intelligence to classify non-blurry photos
+                    based on their composition and overall aesthetic, helping you to prioritize what photos need to be edited.</p>
+            </div>
+        </div>
+        <div class="row text-center" style="background-color: #2b6777; padding-top:150px;padding-bottom:150px;color:white;">
+            <div class="col-xs-2 col-xs-offset-2" style="min-height:150px">
+                <h2><span style="color:#52ab98">Upload</span> Your Pictures</h2>
+                <p> Step 1</p>
+                <p class="lead">Upload your photos to get started!</p>
+            </div>
+            <div class="col-xs-2" style="border-left:2px solid white;min-height:150px">
+                <h2><span style="color:#52ab98">Wait</span> for Filtering</h2>
+                <p> Step 2</p>
+                <p class="lead">Sit back as we filter your images</p>
+            </div>
+            <div class="col-xs-2" style="border-left:2px solid white;min-height:150px">
+                <h2><span style="color:#52ab98">Review</span> and Select</h2>
+                <p> Step 3</p>
+                <p class="lead">Pick your favorites from the results</p>
+            </div>
+            <div class="col-xs-2" style="border-left:2px solid white;min-height:150px;">
+                <h2><span style="color:#52ab98">Download</span> Your Photos!</h2>
+                <p> Step 4</p>
+                <p class="lead">Download and share your selection!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

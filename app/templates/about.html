@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="width:90%">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="jumbotron text-left" style="background-color: #2b6777;color:white">
+                    <h1>About Photo Selector</h1>
+                    <a class="btn btn-lg btn-primary" href="/submit" role="button" style="background-color: #2b6777; 
+                    color:white; border-color:white">Try it Now &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom:100px">
+        <div class="col-xs-3  col-xs-offset-3 lead text-right jumbotron" style="background-color: #c8d8e4;padding-right: 40px;">
+            <h2 style="font-size:45px">How it Started</h2>
+            <p style="font-size:25px">Photography has always been my passion, but as a photographer, 
+                I often found myself overwhelmed by the sheer volume of photos 
+                I needed to sort through after a shoot. It was a time-consuming 
+                process that drained my energy and creativity. In response to 
+                this challenge, I embarked on a journey to develop a web app 
+                that would revolutionize my photography workflow. My goal was 
+                clear: to save time, increase productivity, and, most importantly, 
+                allow me to focus more on the art of photography
+            </p>
+        </div>
+        <div class="col-xs-2" style="padding-left:90px">
+            <img src="static/nonuser/4739178.jpg" style="width:500px">
+        </div>
+    </div>
+    <div class="row" style="padding-bottom:100px">
+        <div class="col-xs-3 col-xs-offset-3" style="padding-top:50px">
+            <img src="static/nonuser/20945347.jpg" style="width:610px">
+        </div>
+        <div class="col-xs-3 lead jumbotron" style="background-color: #c8d8e4;padding-left: 40px;">
+            <h2 style="font-size:45px">How it Works</h2>
+            <p style="font-size:25px">To approach this issue, I turned to machine learning and computer 
+                vision techniques. To detect blurriness, I turned to using the 
+                Laplacian of the image. By taking the variance of the Laplacian of
+                the image, I was able to come up with a metric to show if a
+                photo was blurry or not. To learn a photos aesthetic value, I 
+                leveraged the abilities of the Represenation Learning of Image
+                Composition (ReLIC) framework. The framework, which utilizes 
+                MobileNetV2 to extract features and a fully-connected graph to learn,
+                was the foundation for my app's ability to analyze images. 
+            </p>
+        </div>
+    </div>
+    <div class="row"style="padding-bottom:100px">
+        <div class="col-xs-3  col-xs-offset-3 lead text-right jumbotron" style="background-color: #c8d8e4; padding-right:40px;">
+            <h2 style="font-size:45px">How it's Been Going</h2>
+            <p style="font-size:25px">This approach not only streamlined the culling process but also 
+                enhanced the quality of my selected images. It was a significant 
+                breakthrough in my photography workflow, and it's incredibly 
+                rewarding to see how these computer vision techniques have made 
+                a positive impact on my artistry and productivity.
+            </p>
+        </div>
+        <div class="col-xs-2" style="padding-left:110px;">
+            <img src="static/nonuser/06_Photographer-03_generated.jpg" style="width:450px;">
+        </div>
+    </div>
+{% endblock %}

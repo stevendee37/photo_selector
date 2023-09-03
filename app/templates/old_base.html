@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'bootstrap/base.html' %}
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Website</title>
+        {% else %}
+        <title>Welcome to my website!</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            Photo Selector: 
+            <a href="/index">Home</a>
+            <a href="/submit">Submit</a>
+            <a href="/results">Results</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

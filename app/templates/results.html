@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="width:90%">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="jumbotron text-left" style="background-color: #2b6777;color:white">
+                    <h1>Results</h1>
+                    <p class="lead">Got more pictures to check? Click the button below to process more pictures!</p>
+                    <a class="btn btn-lg btn-primary" href="/submit" role="button" style="background-color: #2b6777; 
+                    color:white; border-color:white">Submit &raquo;</a>
+                </div>
+            </div>
+            <div class="col-xs-2" style="border-left:2px solid lightgrey;">
+                <h3 style="color:grey">Jump to:</h3>
+                <a href="#best">
+                    <h4 style="color:lightgrey">Best</h4>
+                </a>
+                <a href="#great">
+                    <h4 style="color:lightgrey">Great</h4>
+                </a>
+                <a href="#good">
+                    <h4 style="color:lightgrey">Good</h4>
+                </a>
+                <a href="#bad">
+                    <h4 style="color:lightgrey">Bad</h4>
+                </a>
+                <a href="#rejected">
+                    <h4 style="color:lightgrey">Rejected</h4>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 style="font-size:45px">Accepted</h2>
+                <a href="{{ url_for('download_images') }}" download>
+                    <button class="btn btn-primary"style="background-color: #52ab98;border-color: #52ab98;color:white;">
+                        Download All Accepted Photos
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 id="best">Best</h2>
+                {% if best %}
+                    <a href="{{ url_for('download_images_0') }}" download>
+                        <button class="btn btn-primary" style="background-color: #52ab98;border-color: #52ab98;color:white;">
+                            Download Best Photos
+                        </button>
+                    </a>
+                    <div class="row">
+                        {% for pic in best %}
+                            <div class="col-md-3">
+                                <a href="{{ url_for('display_image', filename=pic) }}" style="max-height:100%;max-width:100%" download>
+                                    <img src="{{ url_for('display_image', filename=pic) }}" class="img-thumbnail">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead">No images ranked as Best!</p>
+                {% endif %}
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 id="great">Great</h2>
+                {% if great %}
+                    <a href="{{ url_for('download_images_1') }}" download>
+                        <button class="btn btn-primary" style="background-color: #52ab98;border-color: #52ab98;color:white;">
+                            Download Great Photos
+                        </button>
+                    </a>
+                    <div class="row">
+                        {% for pic in great %}
+                            <div class="col-md-3">
+                                <a href="{{ url_for('display_image', filename=pic) }}" style="max-height:100%;max-width:100%" download>
+                                    <img src="{{ url_for('display_image', filename=pic) }}" class="img-thumbnail">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead">No images ranked as Great!</p>
+                {% endif %}
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 id="good">Good</h2>
+                {% if good %}
+                    <a href="{{ url_for('download_images_2') }}" download>
+                        <button class="btn btn-primary" style="background-color: #52ab98;border-color: #52ab98;color:white;">
+                            Download Good Photos
+                        </button>
+                    </a>
+                    <div class="row">
+                        {% for pic in good %}
+                            <div class="col-md-3">
+                                <a href="{{ url_for('display_image', filename=pic) }}" style="max-height:100%;max-width:100%" download>
+                                    <img src="{{ url_for('display_image', filename=pic) }}" class="img-thumbnail" >
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead">No images ranked as Good!</p>
+                {% endif %}
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 id="bad">Bad</h2>
+                {% if bad %}
+                    <a href="{{ url_for('download_images_3') }}" download>
+                        <button class="btn btn-primary" style="background-color: #52ab98;border-color: #52ab98;color:white;">
+                            Download Bad Photos
+                        </button>
+                    </a>
+                    <div class="row">
+                        {% for pic in bad %}
+                            <div class="col-md-3">
+                                <a href="{{ url_for('display_image', filename=pic) }}" style="max-height:100%;max-width:100%" download>
+                                    <img src="{{ url_for('display_image', filename=pic) }}" class="img-thumbnail">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead">No images ranked as Bad!</p>
+                {% endif %}
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 id="rejected" style="font-size:45px">Rejected</h2>
+                {% if reject %}
+                    <div class="row">
+                        {% for pic_reject in reject %}
+                            <div class="col-md-3">
+                                <a href="{{ url_for('display_image', filename=pic_reject) }}" style="max-height:100%;max-width:100%" download>
+                                    <img src="{{ url_for('display_image', filename=pic_reject) }}" class="img-thumbnail">
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead">No images were rejected!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
